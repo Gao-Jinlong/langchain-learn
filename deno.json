@@ -1,6 +1,13 @@
 {
   "imports": {
-    "lodash": "npm:/lodash@4.17.21"
+    "lodash": "npm:/lodash@4.17.21",
+    "dotenv": "https://deno.land/std@0.220.0/dotenv/mod.ts",
+    "langchain": "npm:/langchain",
+    "langchain/": "npm:/langchain/",
+    "@langchain/openai": "npm:/@langchain/openai",
+    "@langchain/openai/": "npm:/@langchain/openai/",
+    "@langchain/core": "npm:/@langchain/core",
+    "@langchain/core/": "npm:/@langchain/core/",
   },
   "deno.enable": true
 }
