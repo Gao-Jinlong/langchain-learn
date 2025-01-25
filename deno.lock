@@ -1,6 +1,7 @@
 {
   "version": "4",
   "specifiers": {
+    "npm:@langchain/core@*": "0.3.34_zod@3.24.1",
     "npm:@langchain/openai@*": "0.4.0_@langchain+core@0.3.34__openai@4.80.1___zod@3.24.1__zod@3.24.1_zod@3.24.1_openai@4.80.1__zod@3.24.1"
   },
   "npm": {
@@ -15,7 +16,24 @@
         "camelcase",
         "decamelize",
         "js-tiktoken",
-        "langsmith",
+        "langsmith@0.3.3_openai@4.80.1__zod@3.24.1_zod@3.24.1",
+        "mustache",
+        "p-queue",
+        "p-retry",
+        "uuid",
+        "zod",
+        "zod-to-json-schema"
+      ]
+    },
+    "@langchain/core@0.3.34_zod@3.24.1": {
+      "integrity": "sha512-gBa2UbnBsf+TmoCbV6VuQDvZTsD3nDFtRrAam2BKim/Criy0BTPyGy4PCFpDkZ2KqKHCXXa0BlPZFDfcE/uwLQ==",
+      "dependencies": [
+        "@cfworker/json-schema",
+        "ansi-styles@5.2.0",
+        "camelcase",
+        "decamelize",
+        "js-tiktoken",
+        "langsmith@0.3.3",
         "mustache",
         "p-queue",
         "p-retry",
@@ -27,7 +45,7 @@
     "@langchain/openai@0.4.0_@langchain+core@0.3.34__openai@4.80.1___zod@3.24.1__zod@3.24.1_zod@3.24.1_openai@4.80.1__zod@3.24.1": {
       "integrity": "sha512-KI/EIz5msj3I5Q/QrwW8b7TAXIvo/Xv7TCVzUQOTVppu2P+lycq+mq4Xlbss05FkyeDrxf20x392YgtNngNxKA==",
       "dependencies": [
-        "@langchain/core",
+        "@langchain/core@0.3.34_openai@4.80.1__zod@3.24.1_zod@3.24.1",
         "js-tiktoken",
         "openai",
         "zod",
@@ -160,6 +178,18 @@
       "integrity": "sha512-nUVdO5k/M9llWpiaZlBBDdtmr6qWXwSD6fgaDu2zM8UP+OXxx9V37lFkI6w0/1IuaDx7WffZ37oYd9KvcWKElg==",
       "dependencies": [
         "base64-js"
+      ]
+    },
+    "langsmith@0.3.3": {
+      "integrity": "sha512-B9B0ThaPYwNdTg9ck6bWF2Mjd1TJvVKLfLedufIudmO8aPDslcc2uVlyPEtskZFEdmfjfVHEqDnhnuAhyifrZQ==",
+      "dependencies": [
+        "@types/uuid",
+        "chalk",
+        "console-table-printer",
+        "p-queue",
+        "p-retry",
+        "semver",
+        "uuid"
       ]
     },
     "langsmith@0.3.3_openai@4.80.1__zod@3.24.1_zod@3.24.1": {
