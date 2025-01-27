@@ -1,1 +1,4 @@
 .env.local
+.ipynb_checkpoints
+.env
+node_modules
