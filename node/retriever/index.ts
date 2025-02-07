@@ -108,13 +108,23 @@ async function main3() {
   const model = new ChatOpenAI(chatOptions);
 
   const retriever = ScoreThresholdRetriever.fromVectorStore(vectorStore, {
-    minSimilarityScore: 0.4,
+    minSimilarityScore: 0.8,
     maxK: 5,
     kIncrement: 1,
   });
 
   const res = await retriever.invoke("茴香豆是做什么用的");
-  console.log("🚀 ~ main ~ res:", res);
+  const res2 = await retriever.invoke("孔乙己是做什么的");
+  console.log(
+    "🚀 ~ main ~ res:",
+    res,
+    "\n",
+    res.length,
+    "\n",
+    res2,
+    "\n",
+    res2.length
+  );
 }
 
 main3();
