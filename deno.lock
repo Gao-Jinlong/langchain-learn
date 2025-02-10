@@ -2,6 +2,7 @@
   "version": "4",
   "specifiers": {
     "npm:@langchain/core@0.1.48": "0.1.48_zod@3.24.1",
+    "npm:@langchain/openai@0.0.22": "0.0.22_zod@3.24.1_openai@4.80.1__zod@3.24.1",
     "npm:cheerio@*": "1.0.0",
     "npm:ignore@*": "7.0.3",
     "npm:langchain@0.1.29": "0.1.29_zod@3.24.1",
@@ -26,7 +27,7 @@
       "integrity": "sha512-tib4UJNkyA4TPNsTNChiBtZmThVJBr7X/iooSmKeCr+yUEha2Yxly3A4OAO95Vlpj4Q+od8HAfCbZih/1XqAMw==",
       "dependencies": [
         "@langchain/core@0.1.63_zod@3.24.1",
-        "@langchain/openai",
+        "@langchain/openai@0.0.34_zod@3.24.1_openai@4.80.1__zod@3.24.1",
         "expr-eval",
         "flat",
         "langsmith@0.1.68_openai@4.80.1__zod@3.24.1_zod@3.24.1",
@@ -81,6 +82,16 @@
         "p-queue",
         "p-retry",
         "uuid@9.0.1",
+        "zod",
+        "zod-to-json-schema"
+      ]
+    },
+    "@langchain/openai@0.0.22_zod@3.24.1_openai@4.80.1__zod@3.24.1": {
+      "integrity": "sha512-mkXRSeedwCzPnfvp1kvaGBXyVWTB86n77pUyw5bC9ka43/cPBHZdHlSnTZMuJi3H4RnV4CMxunaOlm+s7NWfxQ==",
+      "dependencies": [
+        "@langchain/core@0.1.63_openai@4.80.1__zod@3.24.1_zod@3.24.1",
+        "js-tiktoken",
+        "openai",
         "zod",
         "zod-to-json-schema"
       ]
@@ -349,7 +360,7 @@
         "@anthropic-ai/sdk",
         "@langchain/community",
         "@langchain/core@0.1.63_zod@3.24.1",
-        "@langchain/openai",
+        "@langchain/openai@0.0.34_zod@3.24.1_openai@4.80.1__zod@3.24.1",
         "binary-extensions",
         "js-tiktoken",
         "js-yaml",
