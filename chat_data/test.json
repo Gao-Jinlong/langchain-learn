@@ -1,0 +1,34 @@
+[
+  {
+    "type": "human",
+    "data": {
+      "content": "Hi, 我叫小明",
+      "additional_kwargs": {},
+      "response_metadata": {}
+    }
+  },
+  {
+    "type": "ai",
+    "data": {
+      "content": "你好",
+      "additional_kwargs": {},
+      "response_metadata": {}
+    }
+  },
+  {
+    "type": "human",
+    "data": {
+      "content": "我叫什么？",
+      "additional_kwargs": {},
+      "response_metadata": {}
+    }
+  },
+  {
+    "type": "ai",
+    "data": {
+      "content": "你刚刚说：“我叫小明”,所以你的名字是小明。很高兴认识你，小明！😊",
+      "additional_kwargs": {},
+      "response_metadata": {}
+    }
+  }
+]
