@@ -20,7 +20,7 @@ dotenv.config({
   path: "../.env.local",
 });
 
-const chatHistoryDir = path.join(__dirname, "../../data/chat_history");
+const chatHistoryDir = path.join(__dirname, "../../chat_data");
 const chatOptions = {
   openAIApiKey: process.env.Tongyi_API_KEY,
   temperature: 1.5,
@@ -40,7 +40,7 @@ const SYSTEM_TEMPLATE = `
 const prompt = ChatPromptTemplate.fromMessages([
   ["system", SYSTEM_TEMPLATE],
   new MessagesPlaceholder("history"),
-  ["human", "现在，你需要基于原文，回答以下问题：\n{standalone_question}`"],
+  ["human", "现在，你需要基于原文，回答以下问题：\n{standalone_question}"],
 ]);
 
 async function loadVectorStore() {
@@ -87,12 +87,6 @@ async function main() {
     convertDocsToString,
   ]);
 
-  const prompt = ChatPromptTemplate.fromMessages([
-    ["system", SYSTEM_TEMPLATE],
-    new MessagesPlaceholder("history"),
-    ["human", "现在，你需要基于原文，回答一下问题：\n{standalone_question}"],
-  ]);
-
   const model = new ChatOpenAI(chatOptions);
 
   const ragChain = RunnableSequence.from([
@@ -109,20 +103,24 @@ async function main() {
 
   const ragChainWithHistory = new RunnableWithMessageHistory({
     runnable: ragChain,
-    getMessageHistory: (sessionId) =>
-      new JSONChatHistory({ sessionId, dir: chatHistoryDir }),
+    getMessageHistory: (sessionId) => {
+      const history = new JSONChatHistory({ sessionId, dir: chatHistoryDir });
+      return history;
+    },
     historyMessagesKey: "history",
     inputMessagesKey: "question",
   });
 
   const res = await ragChainWithHistory.invoke(
     {
-      question: "什么是球状闪电？",
+      question: "这个现象在文中有什么故事",
     },
     {
       configurable: { sessionId: "test-history" },
     }
   );
+
+  console.log("res", res);
 }
 
 main();
