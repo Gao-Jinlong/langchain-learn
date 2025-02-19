@@ -1,11 +1,28 @@
 {
   "version": "4",
   "specifiers": {
+    "npm:@langchain/core@0.1.48": "0.1.48_zod@3.24.2",
     "npm:@langchain/openai@0.0.22": "0.0.22_zod@3.24.2_openai@4.85.1__zod@3.24.2",
     "npm:zod-to-json-schema@*": "3.24.1_zod@3.24.2",
     "npm:zod@*": "3.24.2"
   },
   "npm": {
+    "@langchain/core@0.1.48_zod@3.24.2": {
+      "integrity": "sha512-kGggyDbaYzCIPGkzvMvm/v0+lcTy1jlX6QZ7PSzUQFYJg5JK399x3AOYIDkbbUVxBAyHRgrWlxVQXH0FW3N6Bg==",
+      "dependencies": [
+        "ansi-styles",
+        "camelcase",
+        "decamelize",
+        "js-tiktoken",
+        "langsmith@0.1.68",
+        "ml-distance",
+        "p-queue",
+        "p-retry",
+        "uuid@9.0.1",
+        "zod",
+        "zod-to-json-schema"
+      ]
+    },
     "@langchain/core@0.1.63_openai@4.85.1__zod@3.24.2_zod@3.24.2": {
       "integrity": "sha512-+fjyYi8wy6x1P+Ee1RWfIIEyxd9Ee9jksEwvrggPwwI/p45kIDTdYTblXsM13y4mNWTiACyLSdbwnPaxxdoz+w==",
       "dependencies": [
@@ -13,7 +30,7 @@
         "camelcase",
         "decamelize",
         "js-tiktoken",
-        "langsmith",
+        "langsmith@0.1.68_openai@4.85.1__zod@3.24.2_zod@3.24.2",
         "ml-distance",
         "mustache",
         "p-queue",
@@ -26,7 +43,7 @@
     "@langchain/openai@0.0.22_zod@3.24.2_openai@4.85.1__zod@3.24.2": {
       "integrity": "sha512-mkXRSeedwCzPnfvp1kvaGBXyVWTB86n77pUyw5bC9ka43/cPBHZdHlSnTZMuJi3H4RnV4CMxunaOlm+s7NWfxQ==",
       "dependencies": [
-        "@langchain/core",
+        "@langchain/core@0.1.63_openai@4.85.1__zod@3.24.2_zod@3.24.2",
         "js-tiktoken",
         "openai",
         "zod",
@@ -217,6 +234,17 @@
       "integrity": "sha512-XC63YQeEcS47Y53gg950xiZ4IWmkfMe4p2V9OSaBt26q+p47WHn18izuXzSclCI73B7yGqtfRsT6jcZQI0y08g==",
       "dependencies": [
         "base64-js"
+      ]
+    },
+    "langsmith@0.1.68": {
+      "integrity": "sha512-otmiysWtVAqzMx3CJ4PrtUBhWRG5Co8Z4o7hSZENPjlit9/j3/vm3TSvbaxpDYakZxtMjhkcJTqrdYFipISEiQ==",
+      "dependencies": [
+        "@types/uuid",
+        "commander",
+        "p-queue",
+        "p-retry",
+        "semver",
+        "uuid@10.0.0"
       ]
     },
     "langsmith@0.1.68_openai@4.85.1__zod@3.24.2_zod@3.24.2": {
