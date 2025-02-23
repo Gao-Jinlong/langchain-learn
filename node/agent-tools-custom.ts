@@ -100,37 +100,37 @@ async function main() {
     description: "获取小说 《球状闪电》相关问题的答案",
   });
 
-  // const dateDiffTool = new DynamicStructuredTool({
-  //   name: "date-difference-calculator",
-  //   description: "计算两个日期之间的天数差",
-  //   schema: z.object({
-  //     date1: z.string().describe("第一个日期，以YYYY-MM-DD格式表示"),
-  //     date2: z.string().describe("第二个日期，以YYYY-MM-DD格式表示"),
-  //   }),
-  //   func: async ({ date1, date2 }) => {
-  //     const d1 = new Date(date1);
-  //     const d2 = new Date(date2);
-  //     const difference = Math.abs(d2.getTime() - d1.getTime());
-  //     const days = Math.ceil(difference / (1000 * 60 * 60 * 24));
-  //     return days.toString();
-  //   },
-  // });
+  const dateDiffTool = new DynamicStructuredTool({
+    name: "date-difference-calculator",
+    description: "计算两个日期之间的天数差",
+    schema: z.object({
+      date1: z.string().describe("第一个日期，以YYYY-MM-DD格式表示"),
+      date2: z.string().describe("第二个日期，以YYYY-MM-DD格式表示"),
+    }),
+    func: async ({ date1, date2 }) => {
+      const d1 = new Date(date1);
+      const d2 = new Date(date2);
+      const difference = Math.abs(d2.getTime() - d1.getTime());
+      const days = Math.ceil(difference / (1000 * 60 * 60 * 24));
+      return days.toString();
+    },
+  });
 
-  const tools = [retrieverTool, new Calculator()];
+  const tools = [retrieverTool, dateDiffTool, new Calculator()];
 
   const agents = await createToolAgentWithTool(tools);
 
+  // const res = await agents.invoke({
+  //   input: "小说球状闪电中量子玫瑰的情节",
+  // });
+
+  // const res = await agents.invoke({
+  //   input: "我有 17 个苹果，小明的苹果比我的三倍少 10 个，小明有多少个苹果？",
+  // });
+
   const res = await agents.invoke({
-    input: "小说球状闪电中量子玫瑰的情节",
+    input: "今年是 2024 年，今年 5.1 和 10.1 之间有多少天？",
   });
-
-  //   const res = await agents.invoke({
-  //     input: "我有 17 个苹果，小明的苹果比我的三倍少 10 个，小明有多少个苹果？",
-  //   });
-
-  //   const res = await agents.invoke({
-  //     input: "今年是 2024 年，今年 5.1 和 10.1 之间有多少天？",
-  //   });
 
   console.log(res);
 }
