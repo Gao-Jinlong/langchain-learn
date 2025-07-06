@@ -1,0 +1,27 @@
+{
+	"dependencies": {
+		"@langchain/community": "^0.3.48",
+		"@langchain/core": "^0.3.62",
+		"@langchain/langgraph": "^0.3.6",
+		"@langchain/openai": "^0.5.18",
+		"@langchain/tavily": "^0.1.4",
+		"canvas": "^3.1.2",
+		"d3": "^7.9.0",
+		"dotenv": "^17.0.1",
+		"tslab": "^1.0.22",
+		"zod": "^3.25.74"
+	},
+	"devDependencies": {
+		"@types/node": "^24.0.10"
+	},
+	"pnpm": {
+		"onlyBuiltDependencies": [
+			"canvas",
+			"canvas",
+			"protobufjs",
+			"protobufjs",
+			"zeromq",
+			"zeromq"
+		]
+	}
+}
